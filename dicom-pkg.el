@@ -1,2 +1,2 @@
 ;; Generated package description from dicom.el  -*- no-byte-compile: t -*-
-(define-package "dicom" "0.1.0.20241220.204823" "DICOM viewer" '((emacs "28.1") (compat "30")) :commit "fc2eab62c7c3d18b06822685c093b2a97c32f5c2" :authors '(("Daniel Mendler" . "mail@daniel-mendler.de")) :maintainer '("Daniel Mendler" . "mail@daniel-mendler.de") :keywords '("multimedia" "hypermedia" "files") :url "https://github.com/minad/dicom")
+(define-package "dicom" "0.2.0.20241220.230136" "DICOM viewer" '((emacs "28.1") (compat "30")) :commit "475ffdb240775c751f62250ef35c652f94beadd9" :authors '(("Daniel Mendler" . "mail@daniel-mendler.de")) :maintainer '("Daniel Mendler" . "mail@daniel-mendler.de") :keywords '("multimedia" "hypermedia" "files") :url "https://github.com/minad/dicom")
