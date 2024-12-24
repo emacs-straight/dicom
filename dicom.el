@@ -172,6 +172,12 @@ progress:${percent-pos}%%' %s) & disown"
 </svg>")
   "Thumbnail placeholder image.")
 
+(defvar dicom--display-table
+  (let ((table (make-display-table)))
+    (set-display-table-slot table 'wrap ?\s)
+    table)
+  "Display table to hide wrap characters.")
+
 ;;;; Internal functions
 
 (defun dicom--bookmark-record ()
@@ -469,11 +475,12 @@ progress:${percent-pos}%%' %s) & disown"
               dicom--file file
               dicom--data (dicom--read file)
               buffer-read-only t
+              buffer-display-table dicom--display-table
               truncate-lines nil
+              left-fringe-width 0
+              right-fringe-width 0
               bookmark-make-record-function #'dicom--bookmark-record
               revert-buffer-function (lambda (&rest _) (dicom--setup file))
-              fringe-indicator-alist '((continuation . nil)
-                                       (truncation . nil))
               outline-regexp "\\*+"
               outline-minor-mode-cycle t
               outline-minor-mode-use-buttons 'in-margins
@@ -622,7 +629,7 @@ REUSE can be a buffer name to reuse."
   (add-to-list 'auto-mode-alist '("DICOMDIR" . dicom-auto-mode)))
 
 ;;;###autoload
-(funcall 'eval-after-load 'ol
+(eval-after-load 'ol
   (lambda ()
     (defvar dicom--file)
     (declare-function org-link-set-parameters "ol")
@@ -632,7 +639,7 @@ REUSE can be a buffer name to reuse."
      :follow (lambda (link _) (dicom-open link))
      :store
      (lambda ()
-       (when (eq major-mode 'dicom-mode)
+       (when (derived-mode-p 'dicom-mode)
          (org-link-store-props
           :type "dicom"
           :link (concat "dicom:" (abbreviate-file-name dicom--file))))))))
