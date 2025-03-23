@@ -1,4 +1,4 @@
-This is docKPbpQq.info, produced by makeinfo version 6.8 from
+This is docR6zkM4.info, produced by makeinfo version 6.8 from
 dicom.texi.
 
 INFO-DIR-SECTION Emacs misc features
@@ -7,7 +7,7 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
-File: docKPbpQq.info,  Node: Top,  Next: Installation,  Up: (dir)
+File: docR6zkM4.info,  Node: Top,  Next: Installation,  Up: (dir)
 
 dicom.el - DICOM viewer - Digital Imaging and Communications in Medicine
 ************************************************************************
@@ -28,7 +28,7 @@ DICOMDIR directory files or DICOM image files interactively.
 * Contributions::
 
 
-File: docKPbpQq.info,  Node: Installation,  Next: Supported files,  Prev: Top,  Up: Top
+File: docR6zkM4.info,  Node: Installation,  Next: Supported files,  Prev: Top,  Up: Top
 
 1 Installation
 **************
@@ -40,14 +40,14 @@ open ‘DICOMDIR’ and DICOM image files.
 
    Emacs must be compiled with support for PNG, SVG and XML.  The
 package relies on external programs from the dcmtk DICOM toolkit, which
-are all widely available on Linux distributions.
+are all widely available on GNU/Linux distributions.
 
    • ‘dcm2xml’ and ‘dcmj2pnm’ from the dcmtk DICOM toolkit
    • ‘ffmpeg’ for video conversion (optional)
    • ‘mpv’ for video playing (optional)
 
 
-File: docKPbpQq.info,  Node: Supported files,  Next: Contributions,  Prev: Installation,  Up: Top
+File: docR6zkM4.info,  Node: Supported files,  Next: Contributions,  Prev: Installation,  Up: Top
 
 2 Supported files
 *****************
@@ -59,7 +59,7 @@ files nicely, if the metadata records are not interpreted properly.  Any
 help improving the package is welcome.
 
 
-File: docKPbpQq.info,  Node: Contributions,  Prev: Supported files,  Up: Top
+File: docR6zkM4.info,  Node: Contributions,  Prev: Supported files,  Up: Top
 
 3 Contributions
 ***************
@@ -73,8 +73,8 @@ copyright assignment to the FSF.
 Tag Table:
 Node: Top226
 Node: Installation1075
-Node: Supported files1780
-Node: Contributions2251
+Node: Supported files1784
+Node: Contributions2255
 
 End Tag Table
 
