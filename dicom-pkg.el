@@ -1,2 +1,2 @@
-;; Generated package description from mode: lisp-data; .el  -*- dicomno-byte-compile: t -*-
-(define-package "dicom" "0.5.0.20250322.120827" "DICOM viewer - Digital Imaging & Communications in Medicine" '((emacs "28.1") (compat "30")) :commit "691b85989be2a4695b88f994bedd46b793c14fe2" :authors '(("Daniel Mendler" . "mail@daniel-mendler.de")) :maintainer '("Daniel Mendler" . "mail@daniel-mendler.de") :keywords '("multimedia" "hypermedia" "files") :url "https://github.com/minad/dicom")
+;; Generated package description from dicom.el  -*- mode: lisp-data; no-byte-compile: t -*-
+(define-package "dicom" "0.5.0.20250420.64813" "DICOM viewer - Digital Imaging & Communications in Medicine" '((emacs "28.1") (compat "30")) :commit "aa29afddc6dbb03d1e7a9563fef8c62324f8e789" :authors '(("Daniel Mendler" . "mail@daniel-mendler.de")) :maintainer '("Daniel Mendler" . "mail@daniel-mendler.de") :keywords '("multimedia" "hypermedia" "files") :url "https://github.com/minad/dicom")
