@@ -1,4 +1,4 @@
-This is docTaJ2Uo.info, produced by makeinfo version 6.8 from
+This is docrubTVl.info, produced by makeinfo version 6.8 from
 dicom.texi.
 
 INFO-DIR-SECTION Emacs misc features
@@ -7,7 +7,7 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
-File: docTaJ2Uo.info,  Node: Top,  Next: Installation,  Up: (dir)
+File: docrubTVl.info,  Node: Top,  Next: Installation,  Up: (dir)
 
 dicom.el - DICOM viewer - Digital Imaging and Communications in Medicine
 ************************************************************************
@@ -28,7 +28,7 @@ DICOMDIR directory files or DICOM image files interactively.
 * Contributions::
 
 
-File: docTaJ2Uo.info,  Node: Installation,  Next: Supported files,  Prev: Top,  Up: Top
+File: docrubTVl.info,  Node: Installation,  Next: Supported files,  Prev: Top,  Up: Top
 
 1 Installation
 **************
@@ -49,7 +49,7 @@ available on GNU/Linux distributions.
    • ‘mpv’ for video playing (optional)
 
 
-File: docTaJ2Uo.info,  Node: Supported files,  Next: Contributions,  Prev: Installation,  Up: Top
+File: docrubTVl.info,  Node: Supported files,  Next: Contributions,  Prev: Installation,  Up: Top
 
 2 Supported files
 *****************
@@ -61,7 +61,7 @@ are not interpreted properly.  In such cases, any help improving the
 package is welcome.
 
 
-File: docTaJ2Uo.info,  Node: Contributions,  Prev: Supported files,  Up: Top
+File: docrubTVl.info,  Node: Contributions,  Prev: Supported files,  Up: Top
 
 3 Contributions
 ***************
