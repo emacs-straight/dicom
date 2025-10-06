@@ -1,4 +1,4 @@
-This is docHtP4fi.info, produced by makeinfo version 6.8 from
+This is docrFJGzv.info, produced by makeinfo version 6.8 from
 dicom.texi.
 
 INFO-DIR-SECTION Emacs misc features
@@ -7,7 +7,7 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
-File: docHtP4fi.info,  Node: Top,  Next: Installation,  Up: (dir)
+File: docrFJGzv.info,  Node: Top,  Next: Installation,  Up: (dir)
 
 dicom.el - DICOM viewer - Digital Imaging and Communications in Medicine
 ************************************************************************
@@ -28,7 +28,7 @@ DICOMDIR directory files or DICOM image files interactively.
 * Contributions::
 
 
-File: docHtP4fi.info,  Node: Installation,  Next: Supported files,  Prev: Top,  Up: Top
+File: docrFJGzv.info,  Node: Installation,  Next: Supported files,  Prev: Top,  Up: Top
 
 1 Installation
 **************
@@ -49,7 +49,7 @@ available on GNU/Linux distributions.
    • ‘mpv’ for video playing (optional)
 
 
-File: docHtP4fi.info,  Node: Supported files,  Next: Contributions,  Prev: Installation,  Up: Top
+File: docrFJGzv.info,  Node: Supported files,  Next: Contributions,  Prev: Installation,  Up: Top
 
 2 Supported files
 *****************
@@ -61,7 +61,7 @@ are not interpreted properly.  In such cases, any help improving the
 package is welcome.
 
 
-File: docHtP4fi.info,  Node: Contributions,  Prev: Supported files,  Up: Top
+File: docrFJGzv.info,  Node: Contributions,  Prev: Supported files,  Up: Top
 
 3 Contributions
 ***************
