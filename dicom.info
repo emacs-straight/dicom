@@ -1,4 +1,4 @@
-This is doccdSeTC.info, produced by makeinfo version 6.8 from
+This is docAUabss.info, produced by makeinfo version 6.8 from
 dicom.texi.
 
 INFO-DIR-SECTION Emacs misc features
@@ -7,7 +7,7 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
-File: doccdSeTC.info,  Node: Top,  Next: Installation,  Up: (dir)
+File: docAUabss.info,  Node: Top,  Next: Installation,  Up: (dir)
 
 dicom.el - DICOM viewer - Digital Imaging and Communications in Medicine
 ************************************************************************
@@ -28,7 +28,7 @@ DICOMDIR directory files or DICOM image files interactively.
 * Contributions::
 
 
-File: doccdSeTC.info,  Node: Installation,  Next: Supported files,  Prev: Top,  Up: Top
+File: docAUabss.info,  Node: Installation,  Next: Supported files,  Prev: Top,  Up: Top
 
 1 Installation
 **************
@@ -40,28 +40,31 @@ open ‘DICOMDIR’ and DICOM image files.
 
    Emacs must be compiled with support for PNG, SVG and XML.  The
 package relies on external programs from the DCMTK
-(https://dcmtk.org/en/dcmtk/) DICOM toolkit, which are all widely
-available on GNU/Linux distributions.
+(https://dcmtk.org/en/dcmtk/) DICOM toolkit, which is widely available
+on GNU/Linux distributions.
 
-   • ‘dcm2xml’ and ‘dcmj2pnm’ from the DCMTK
+   • ‘dcm2xml’ and ‘dcm2img’ from the DCMTK
      (https://dcmtk.org/en/dcmtk/) DICOM toolkit
+   • ‘magick’ from ImageMagick (https://imagemagick.org/)
    • ‘ffmpeg’ for video conversion (optional)
    • ‘mpv’ for video playing (optional)
 
 
-File: doccdSeTC.info,  Node: Supported files,  Next: Contributions,  Prev: Installation,  Up: Top
+File: docAUabss.info,  Node: Supported files,  Next: Contributions,  Prev: Installation,  Up: Top
 
 2 Supported files
 *****************
 
 The DICOM format is quite diverse.  The ‘dcm2xml’ tool can read the
 metadata of most uncorrupted DICOM files.  It can still happen that the
-DICOM viewer is unable to display files nicely, if the metadata records
-are not interpreted properly.  In such cases, any help improving the
-package is welcome.
+DICOM viewer is unable to display files, if the metadata records are not
+interpreted properly.  Furthermore the DICOM format supports a variety
+of underlying image formats and compressions, which might not be
+supported by ImageMagick.  In such cases, any help improving the package
+is welcome.
 
 
-File: doccdSeTC.info,  Node: Contributions,  Prev: Supported files,  Up: Top
+File: docAUabss.info,  Node: Contributions,  Prev: Supported files,  Up: Top
 
 3 Contributions
 ***************
@@ -75,8 +78,8 @@ copyright assignment to the FSF.
 Tag Table:
 Node: Top226
 Node: Installation1075
-Node: Supported files1849
-Node: Contributions2293
+Node: Supported files1907
+Node: Contributions2484
 
 End Tag Table
 

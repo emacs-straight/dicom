@@ -37,10 +37,11 @@
 ;; image files interactively.
 
 ;; Emacs must be compiled with support for PNG, SVG and XML.  The package relies
-;; on external programs from the dcmtk DICOM toolkit, which are all widely
-;; available on Linux distributions.
+;; on external programs from the dcmtk DICOM toolkit, which are widely available
+;; on Linux distributions.
 
-;; - `dcm2xml' and `dcmj2pnm' from the dcmtk DICOM toolkit
+;; - `dcm2xml' and `dcm2img' from the dcmtk DICOM toolkit
+;; - `magick' from ImageMagick
 ;; - `ffmpeg' for video conversion (optional)
 ;; - `mpv' for video playing (optional)
 
@@ -65,7 +66,7 @@
   :group 'multimedia
   :prefix "dicom-")
 
-(defcustom dicom-timeout 3
+(defcustom dicom-timeout 5
   "Timeout for conversion."
   :type 'natnum)
 
@@ -74,7 +75,11 @@
   :type 'natnum)
 
 (defcustom dicom-attribute-width 25
-  "Attribute name width."
+  "Attribute name width in characters."
+  :type 'natnum)
+
+(defcustom dicom-thumb-height 200
+  "Thumbnail height in pixels."
   :type 'natnum)
 
 (defcustom dicom-attribute-filter
@@ -163,13 +168,7 @@ progress:${percent-pos}%%' %s) & disown"
 (defvar-local dicom--procs nil
   "Active conversion processes in current buffer.")
 
-(defconst dicom--thumb
-  '( :margin 8 :type svg :width 267 :height 200
-     :data "<svg xmlns='http://www.w3.org/2000/svg' width='267' height='200'>
-  <rect width='267' height='200' fill='black' stroke='gray'/>
-  <line x1='0' y1='0' x2='267' y2='200' stroke='gray'/>
-  <line x1='0' y1='200' x2='267' y2='0' stroke='gray'/>
-</svg>")
+(defvar dicom--thumb nil
   "Thumbnail placeholder image.")
 
 ;;;; Internal functions
@@ -255,10 +254,11 @@ progress:${percent-pos}%%' %s) & disown"
 (defun dicom--read (file)
   "Read DICOM FILE and return list of items."
   (with-temp-buffer
-    (unless (eq 0 (call-process "dcm2xml" nil t nil
-                                "--quiet" "--charset-assume"
-                                "latin-1" "--convert-to-utf8" file))
-      (error "DICOM: Reading DICOM metadata with dcm2xml failed"))
+    (let ((coding-system-for-read 'latin-1)
+          (coding-system-for-write 'latin-1))
+      (unless (eq 0 (call-process "dcm2xml" nil t nil
+                                  "--quiet" "--charset-assume" "latin-1" file))
+        (error "DICOM: Reading DICOM metadata with dcm2xml failed")))
     (let ((dicom-attribute-filter (mapconcat (lambda (x) (format "%s" x))
                                              dicom-attribute-filter
                                              "\\|")))
@@ -281,12 +281,12 @@ progress:${percent-pos}%%' %s) & disown"
         (funcall fun image)
         (put-text-property pos (1+ pos) 'display `(image ,@(cdr image)))))))
 
-(defun dicom--run (cb &rest args)
-  "Run process with ARGS asynchronously and call CB when the process finished."
+(defun dicom--run (cb cmd)
+  "Run process with CMD asynchronously and call CB when the process finished."
   (let ((default-directory "/"))
     (push (make-process
            :name "dicom"
-           :command args
+           :command (list "sh" "-c" cmd)
            :noquery t
            :filter #'ignore
            :sentinel
@@ -301,9 +301,14 @@ progress:${percent-pos}%%' %s) & disown"
     (when dicom-timeout
       (run-at-time dicom-timeout nil #'dicom--stop (car dicom--procs)))))
 
-(defun dicom--enqueue (&rest job)
-  "Enqueue conversion JOB."
-  (push job dicom--queue)
+(defun dicom--enqueue (cb fmt &rest args)
+  "Enqueue conversion job with callback CB.
+The command is specified as FMT string with ARGS."
+  (push (cons cb (apply #'format fmt
+                        (mapcar (lambda (x)
+                                  (if (numberp x) x (shell-quote-argument x)))
+                                args)))
+        dicom--queue)
   (when (length< dicom--procs dicom-parallel)
     (dicom--process)))
 
@@ -313,7 +318,7 @@ progress:${percent-pos}%%' %s) & disown"
                                (format "[%d]" (length dicom--queue))))
   (when-let ((job (car (last dicom--queue))))
     (setq dicom--queue (nbutlast dicom--queue))
-    (apply #'dicom--run job)))
+    (dicom--run (car job) (cdr job))))
 
 (defun dicom--button (label action)
   "Insert button with LABEL and ACTION."
@@ -363,7 +368,14 @@ progress:${percent-pos}%%' %s) & disown"
     (delete-region pos (point))
     (insert (propertize
              " "
-             'display (if exists (dicom--image-desc dst) `(image ,@dicom--thumb))
+             'display (if exists
+                          (dicom--image-desc dst)
+                        (unless dicom--thumb
+                          (setq dicom--thumb
+                                (cdr (dicom--placeholder
+                                      (round (* 4 dicom-thumb-height) 3)
+                                      dicom-thumb-height))))
+                        `(image ,@dicom--thumb))
              'pointer 'hand
              'keymap dicom-image-map
              'dicom--file src
@@ -371,7 +383,14 @@ progress:${percent-pos}%%' %s) & disown"
     (unless exists
       (dicom--enqueue
        (dicom--image-callback tmp dst pos)
-       "dcmj2pnm" "--write-png" "--scale-y-size" "200" src tmp))))
+       ;; If you wonder why we have to try these different commands to extract
+       ;; an image, maybe contribute patches to `dcm2img' or `magick' to improve
+       ;; coverage over the many DICOM image variants. Every order would work.
+       ;; The only difference might be performance. 😉
+       "dcm2img --write-png --scale-y-size %d %s %s || magick %s[0] -resize x%d %s || magick %s[-1] -resize x%d %s"
+       dicom-thumb-height src tmp
+       src dicom-thumb-height tmp
+       src dicom-thumb-height tmp))))
 
 (defun dicom--item (level item &optional indent)
   "Insert ITEM at LEVEL into buffer."
@@ -444,7 +463,8 @@ progress:${percent-pos}%%' %s) & disown"
     (unless exists
       (dicom--enqueue
        (dicom--image-callback tmp dst pos)
-       "dcmj2pnm" "--write-png" dicom--file tmp))))
+       "dcm2img --write-png %s %s || magick %s[0] %s || magick %s[-1] %s"
+       dicom--file tmp dicom--file tmp dicom--file tmp))))
 
 (defun dicom--setup-check ()
   "Check requirements."
@@ -456,7 +476,7 @@ progress:${percent-pos}%%' %s) & disown"
     (dolist (type '(png svg))
       (unless (image-type-available-p type)
         (push (format "lib%s" type) req)))
-    (dolist (exe '("dcm2xml" "dcmj2pnm"))
+    (dolist (exe '("dcm2xml" "dcm2img" "magick"))
       (unless (executable-find exe)
         (push exe req)))
     (when req
@@ -555,14 +575,12 @@ progress:${percent-pos}%%' %s) & disown"
                    (rename-file tmp dst)
                    (dicom-play))
                (delete-file tmp)))
-           "sh" "-c"
-           (format
-            "dcmj2pnm --all-frames --write-bmp %s | ffmpeg -framerate %s -i - %s"
-            (shell-quote-argument dicom--file)
-            (or (alist-get 'RecommendedDisplayFrameRate dicom--data)
-                (alist-get 'CineRate dicom--data)
-                25)
-            (shell-quote-argument tmp)))))))))
+           "(dcm2img --all-frames --write-bmp %s || magick %s bmp:-) | ffmpeg -framerate %s -i - %s"
+           dicom--file dicom--file
+           (or (alist-get 'RecommendedDisplayFrameRate dicom--data)
+               (alist-get 'CineRate dicom--data)
+               "25")
+           tmp)))))))
 
 ;;;###autoload
 (defun dicom-open-at-point ()
