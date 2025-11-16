@@ -1,4 +1,4 @@
-This is docAUabss.info, produced by makeinfo version 6.8 from
+This is docRWJuwA.info, produced by makeinfo version 6.8 from
 dicom.texi.
 
 INFO-DIR-SECTION Emacs misc features
@@ -7,7 +7,7 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
-File: docAUabss.info,  Node: Top,  Next: Installation,  Up: (dir)
+File: docRWJuwA.info,  Node: Top,  Next: Installation,  Up: (dir)
 
 dicom.el - DICOM viewer - Digital Imaging and Communications in Medicine
 ************************************************************************
@@ -28,7 +28,7 @@ DICOMDIR directory files or DICOM image files interactively.
 * Contributions::
 
 
-File: docAUabss.info,  Node: Installation,  Next: Supported files,  Prev: Top,  Up: Top
+File: docRWJuwA.info,  Node: Installation,  Next: Supported files,  Prev: Top,  Up: Top
 
 1 Installation
 **************
@@ -50,7 +50,7 @@ on GNU/Linux distributions.
    • ‘mpv’ for video playing (optional)
 
 
-File: docAUabss.info,  Node: Supported files,  Next: Contributions,  Prev: Installation,  Up: Top
+File: docRWJuwA.info,  Node: Supported files,  Next: Contributions,  Prev: Installation,  Up: Top
 
 2 Supported files
 *****************
@@ -64,7 +64,7 @@ supported by ImageMagick.  In such cases, any help improving the package
 is welcome.
 
 
-File: docAUabss.info,  Node: Contributions,  Prev: Supported files,  Up: Top
+File: docRWJuwA.info,  Node: Contributions,  Prev: Supported files,  Up: Top
 
 3 Contributions
 ***************
