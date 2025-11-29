@@ -1,4 +1,4 @@
-This is docRWJuwA.info, produced by makeinfo version 6.8 from
+This is docNsV16c.info, produced by makeinfo version 6.8 from
 dicom.texi.
 
 INFO-DIR-SECTION Emacs misc features
@@ -7,7 +7,7 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
-File: docRWJuwA.info,  Node: Top,  Next: Installation,  Up: (dir)
+File: docNsV16c.info,  Node: Top,  Next: Installation,  Up: (dir)
 
 dicom.el - DICOM viewer - Digital Imaging and Communications in Medicine
 ************************************************************************
@@ -17,9 +17,9 @@ files are typically used for medical imaging with different modalities
 like US, CR, CT, MRI or PET.  This package adds the ability to view such
 files in Emacs.  The images and metadata are displayed in regular Emacs
 buffers.  The package registers itself in ‘auto-mode-alist’ and
-‘magic-mode-alist’ for DICOMDIR directory files and DICOM images (file
-extension *.dcm or *.ima).  Furthermore the command ‘dicom-open’ opens
-DICOMDIR directory files or DICOM image files interactively.
+‘magic-mode-alist’ for ‘DICOMDIR’ directory files and DICOM images (file
+extension ‘*.dcm’ or ‘*.ima’).  Furthermore the command ‘dicom-open’
+opens ‘DICOMDIR’ directory files or DICOM image files interactively.
 
 * Menu:
 
@@ -28,7 +28,7 @@ DICOMDIR directory files or DICOM image files interactively.
 * Contributions::
 
 
-File: docRWJuwA.info,  Node: Installation,  Next: Supported files,  Prev: Top,  Up: Top
+File: docNsV16c.info,  Node: Installation,  Next: Supported files,  Prev: Top,  Up: Top
 
 1 Installation
 **************
@@ -50,7 +50,7 @@ on GNU/Linux distributions.
    • ‘mpv’ for video playing (optional)
 
 
-File: docRWJuwA.info,  Node: Supported files,  Next: Contributions,  Prev: Installation,  Up: Top
+File: docNsV16c.info,  Node: Supported files,  Next: Contributions,  Prev: Installation,  Up: Top
 
 2 Supported files
 *****************
@@ -64,7 +64,7 @@ supported by ImageMagick.  In such cases, any help improving the package
 is welcome.
 
 
-File: docRWJuwA.info,  Node: Contributions,  Prev: Supported files,  Up: Top
+File: docNsV16c.info,  Node: Contributions,  Prev: Supported files,  Up: Top
 
 3 Contributions
 ***************
@@ -77,9 +77,9 @@ copyright assignment to the FSF.
 
 Tag Table:
 Node: Top226
-Node: Installation1075
-Node: Supported files1907
-Node: Contributions2484
+Node: Installation1099
+Node: Supported files1931
+Node: Contributions2508
 
 End Tag Table
 
