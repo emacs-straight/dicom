@@ -1,4 +1,4 @@
-This is docNsV16c.info, produced by makeinfo version 6.8 from
+This is dochs12Mb.info, produced by makeinfo version 7.1.1 from
 dicom.texi.
 
 INFO-DIR-SECTION Emacs misc features
@@ -7,7 +7,7 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
-File: docNsV16c.info,  Node: Top,  Next: Installation,  Up: (dir)
+File: dochs12Mb.info,  Node: Top,  Next: Installation,  Up: (dir)
 
 dicom.el - DICOM viewer - Digital Imaging and Communications in Medicine
 ************************************************************************
@@ -28,7 +28,7 @@ opens ‘DICOMDIR’ directory files or DICOM image files interactively.
 * Contributions::
 
 
-File: docNsV16c.info,  Node: Installation,  Next: Supported files,  Prev: Top,  Up: Top
+File: dochs12Mb.info,  Node: Installation,  Next: Supported files,  Prev: Top,  Up: Top
 
 1 Installation
 **************
@@ -50,7 +50,7 @@ on GNU/Linux distributions.
    • ‘mpv’ for video playing (optional)
 
 
-File: docNsV16c.info,  Node: Supported files,  Next: Contributions,  Prev: Installation,  Up: Top
+File: dochs12Mb.info,  Node: Supported files,  Next: Contributions,  Prev: Installation,  Up: Top
 
 2 Supported files
 *****************
@@ -64,7 +64,7 @@ supported by ImageMagick.  In such cases, any help improving the package
 is welcome.
 
 
-File: docNsV16c.info,  Node: Contributions,  Prev: Supported files,  Up: Top
+File: dochs12Mb.info,  Node: Contributions,  Prev: Supported files,  Up: Top
 
 3 Contributions
 ***************
@@ -76,10 +76,10 @@ copyright assignment to the FSF.
 
 
 Tag Table:
-Node: Top226
-Node: Installation1099
-Node: Supported files1931
-Node: Contributions2508
+Node: Top228
+Node: Installation1101
+Node: Supported files1933
+Node: Contributions2510
 
 End Tag Table
 
