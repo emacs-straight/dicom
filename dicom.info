@@ -1,4 +1,4 @@
-This is dicom.info, produced by makeinfo version 7.2 from dicom.texi.
+This is dicom.info, produced by makeinfo version 7.1.1 from dicom.texi.
 
 INFO-DIR-SECTION Emacs misc features
 START-INFO-DIR-ENTRY
@@ -62,16 +62,16 @@ of underlying image formats and compressions, which might not be
 supported by ImageMagick.  In such cases, any help improving the package
 is welcome.
 
+
 
 Tag Table:
-Node: Top222
-Node: Installation1073
-Node: Supported files1921
+Node: Top224
+Node: Installation1075
+Node: Supported files1923
 
 End Tag Table
 
 
 Local Variables:
 coding: utf-8
-Info-documentlanguage: en
 End:
