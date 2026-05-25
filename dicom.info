@@ -44,9 +44,12 @@ on Linux distributions.
 
    • ‘dcm2xml’ and ‘dcm2img’ from the DCMTK
      (https://dcmtk.org/en/dcmtk/) DICOM toolkit
-   • ‘magick’ from ImageMagick (https://imagemagick.org/)
-   • ‘ffmpeg’ for video conversion (optional)
-   • ‘mpv’ for video playing (optional)
+   • ‘magick’ from ImageMagick (https://imagemagick.org/) (optional
+     fallback)
+   • ‘gdcmconv’ from Grassroots DICOM
+     (https://sourceforge.net/projects/gdcm/) (optional fallback)
+   • ‘ffmpeg’ for video conversion (optional for video)
+   • ‘mpv’ for video playing (optional for video)
 
 
 File: dicom.info,  Node: Supported files,  Prev: Installation,  Up: Top
@@ -59,15 +62,15 @@ metadata of most uncorrupted DICOM files.  It can still happen that the
 DICOM viewer is unable to display files, if the metadata records are not
 interpreted properly.  Furthermore the DICOM format supports a variety
 of underlying image formats and compressions, which might not be
-supported by ImageMagick.  In such cases, any help improving the package
-is welcome.
+supported by the converter.  In such cases, any help improving the
+package is welcome.
 
 
 
 Tag Table:
 Node: Top224
 Node: Installation1075
-Node: Supported files1923
+Node: Supported files2078
 
 End Tag Table
 
