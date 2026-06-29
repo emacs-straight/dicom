@@ -33,7 +33,7 @@ File: dicom.info,  Node: Installation,  Next: Supported files,  Prev: Top,  Up: 
 
 Dicom.el is available from ELPA
 (https://elpa.gnu.org/packages/dicom.html) or MELPA
-(https://melpa.org/#/dicom) and can be installed via ‘M-x
+(https://releases.melpa.org/#/dicom) and can be installed via ‘M-x
 package-install RET dicom RET’.  After installation, you can open
 ‘DICOMDIR’ and DICOM image files.
 
@@ -70,7 +70,7 @@ package is welcome.
 Tag Table:
 Node: Top224
 Node: Installation1075
-Node: Supported files2078
+Node: Supported files2087
 
 End Tag Table
 
