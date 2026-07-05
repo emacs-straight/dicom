@@ -40,7 +40,8 @@ package-install RET dicom RET’.  After installation, you can open
    Emacs must be compiled with support for PNG, SVG and XML.  The
 package relies on external programs from the DCMTK
 (https://dcmtk.org/en/dcmtk/) DICOM toolkit, which is widely available
-on Linux distributions.
+on Linux distributions.  Some other programs are used as optional
+fallbacks.
 
    • ‘dcm2xml’ and ‘dcm2img’ from the DCMTK
      (https://dcmtk.org/en/dcmtk/) DICOM toolkit
@@ -62,15 +63,16 @@ metadata of most uncorrupted DICOM files.  It can still happen that the
 DICOM viewer is unable to display files, if the metadata records are not
 interpreted properly.  Furthermore the DICOM format supports a variety
 of underlying image formats and compressions, which might not be
-supported by the converter.  In such cases, any help improving the
-package is welcome.
+supported by the dicom-convert.sh
+(https://github.com/minad/dicom/blob/main/dicom-convert.sh) shell
+script.  Help improving the package is very welcome!
 
 
 
 Tag Table:
 Node: Top224
 Node: Installation1075
-Node: Supported files2087
+Node: Supported files2140
 
 End Tag Table
 
