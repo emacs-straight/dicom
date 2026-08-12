@@ -1,0 +1,49 @@
+                           ━━━━━━━━━━━━━━━━━
+                            DICOM.EL - NEWS
+                           ━━━━━━━━━━━━━━━━━
+
+
+1 Version 1.5 (2026-06-05)
+══════════════════════════
+
+  • Introduce `dicom-convert.sh' script for DICOM to image and video
+    conversion.
+
+
+2 Version 1.4 (2026-05-19)
+══════════════════════════
+
+  • Require Compat 31.
+
+
+3 Version 1.3 (2026-01-17)
+══════════════════════════
+
+  • Use `when-let*' instead of `when-let'.
+  • Show date or series number in section title.
+
+
+4 Version 1.2 (2025-11-15)
+══════════════════════════
+
+  • `dicom-next', `dicom-previous': New commands to move to next or
+    previous image.
+  • `dicom-thumb-height': New option to configure thumbnail image pixel
+    height.
+  • Use `dcm2img' instead of deprecated `dcmj2pnm'.
+  • Improve handling of DICOM files with invalid encoding. Use Emacs
+    encoding conversion instead of `--convert-to-utf8' from `dcm2xml'.
+  • Improve image conversion of DICOM files by falling back to
+    ImageMagick in case `dcm2img' fails.
+
+
+5 Version 1.1 (2025-10-13)
+══════════════════════════
+
+  • Handle empty sequences in DICOM files.
+
+
+6 Version 1.0 (2025-09-08)
+══════════════════════════
+
+  • Start of changelog.
