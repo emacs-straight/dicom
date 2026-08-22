@@ -2,6 +2,10 @@
 #+author: Daniel Mendler
 #+language: en
 
+* Version 1.6 (2026-08-21)
+
+- Documentation changes only.
+
 * Version 1.5 (2026-06-05)
 
 - Introduce =dicom-convert.sh= script for DICOM to image and video conversion.
